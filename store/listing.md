@@ -47,11 +47,11 @@ Data-use disclosure: no user data collected or transmitted. Local preferences on
 
 - [ ] Finish the remaining real-player acceptance checks in [verification](../docs/verification.md).
 - [x] Produce final store-sized screenshots and review visible content and branding.
-- [ ] Provide public support/contact and privacy URLs from the publisher.
-- [ ] Recheck listing and policy declarations in the publisher dashboard immediately before submission.
+- [x] Provide public support/contact and privacy URLs from the publisher.
+- [x] Recheck listing and policy declarations in the publisher dashboard immediately before submission.
 - [x] Upload `release/vod-buttons-0.1.0.zip` and save the English listing, icon, two screenshots, permission justifications, data-use declarations and reviewer instructions as a draft.
-- [ ] Submit the completed listing for review. Publication is a separate action.
+- [x] Submit the completed listing for review. Dashboard confirmed **Pending review** on 2026-11-13. Automatic publication is disabled; publication is a separate manual action after approval.
 
-Dashboard draft: [VOD Buttons for Twitch](https://chrome.google.com/u/2/webstore/devconsole/8826c801-e0f6-4f1a-9cf8-545a8290d3bd/hehnhiebaafapanfjnihnegadhemnnbk/edit/listing). Distribution: free, public, all regions.
+Dashboard item: [VOD Buttons for Twitch](https://chrome.google.com/u/2/webstore/devconsole/8826c801-e0f6-4f1a-9cf8-545a8290d3bd/hehnhiebaafapanfjnihnegadhemnnbk/edit/listing). Distribution: free, public, all regions.
 
 Checked 2026-11-13 against the official [image requirements](https://developer.chrome.com/docs/webstore/images), [Manifest V3 policy](https://developer.chrome.com/docs/webstore/program-policies/mv3-requirements) and [developer policies](https://developer.chrome.com/docs/webstore/program-policies/policies). The store requires a PNG icon and at least one screenshot; use the official page for final dimensions and presentation rules.

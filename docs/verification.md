@@ -1,6 +1,6 @@
 # Verification — 2026-11-13
 
-Status: version **0.1.0** uploaded to a Chrome Web Store draft; not yet submitted or published. OpenSpec progress: 15/21 tasks complete. Unchecked tasks include implementation that exists but still lacks the remaining acceptance evidence required by its task.
+Status: version **0.1.0** submitted to Chrome Web Store on 2026-11-13; dashboard confirmed **Pending review**. Automatic publication is disabled. The extension is not published yet. OpenSpec progress: 16/21 tasks complete. Unchecked tasks include implementation that exists but still lacks the remaining acceptance evidence required by its task.
 
 ### Checks waived by the user — 2026-11-13
 
@@ -29,7 +29,7 @@ Native Google Chrome **157.0.8103.40 (Official Build, arm64)**, macOS. This reco
 
 Store captures: [actual settings](../store/screenshots/settings.jpg), [actual Twitch VOD](../store/screenshots/vod.jpg), both 1280×800 JPEG. Original full-browser references and the local overflow fixture capture remain local and are excluded from Git. Fixture images are not evidence of Twitch compatibility.
 
-## Remaining evidence and release work
+## Acceptance evidence and release work
 
 | Task | Implemented / confirmed | Still required |
 | --- | --- | --- |
@@ -38,7 +38,7 @@ Store captures: [actual settings](../store/screenshots/settings.jpg), [actual Tw
 | 3.5 | Native overflow, wheel/gesture event defaults, scrollbar styles and browser scroll tested on fixture; physical wheel/touchpad checks waived | Verify access to all six buttons by dragging the scrollbar on a small real Twitch player |
 | 3.7 | Context/readiness guards, safe activation checks and simulated ad tests; real advertising checks waived | Confirm safe behavior in real unready and ambiguous VOD contexts; defensive ad markers remain unverified |
 | 4.1 | Real basic seeking, modes, two tabs, navigation and keyboard checks above | Complete remaining PRD acceptance items on current stable Chrome, including real clips, boundaries, restart; updated idle hiding was confirmed by the user; ads and physical wheel/touchpad checks waived |
-| 4.2 | Release candidate name, original icons, English listing/privacy text and reference screenshots | Complete public privacy/support links and publisher-facing review; two final store screenshots and the listing are saved in the dashboard |
+| 4.2 | Final name, original icons, English listing/privacy text, two store screenshots and public privacy/support URLs reviewed; task complete | None for store-material preparation |
 
 The test browser already had other extensions installed; none were disabled or changed for this task. A clean-profile acceptance pass is still advisable. The extension remains installed unpacked for local testing. Agent-created VOD and settings tabs were closed after capture; existing user tabs were preserved.
 
@@ -46,4 +46,4 @@ The test browser already had other extensions installed; none were disabled or c
 
 Use the [installation instructions](../README.md). Run `npm test` and `npm run package`. Follow the [Twitch integration recheck procedure](twitch-integration.md) for the remaining real-player checks. The development fixture is at `http://127.0.0.1:8765/dev/` when the documented local server is running.
 
-Before submission, review the [store checklist](../store/listing.md), publish the privacy text at a publisher-owned HTTPS URL, and supply support details. The version 0.1.0 package was uploaded to draft item `hehnhiebaafapanfjnihnegadhemnnbk`. The English description, Entertainment category, icon, two screenshots, permission justifications, no-data-use declarations and reviewer instructions were saved. Distribution is free and public in all regions. No listing has been submitted or published yet.
+See the [store checklist](../store/listing.md). The public [repository](https://github.com/briginas/vod-buttons), [privacy policy](https://github.com/briginas/vod-buttons/blob/main/PRIVACY.md) and [support Issues](https://github.com/briginas/vod-buttons/issues) were created with the user's approval and linked in the listing. The version 0.1.0 package was uploaded to draft item `hehnhiebaafapanfjnihnegadhemnnbk`. The English description, Entertainment category, icon, two screenshots, permission justifications, no-data-use declarations and reviewer instructions were saved. Distribution is free and public in all regions. Submission succeeded and the dashboard showed **Pending review**. Automatic publication was unchecked before submission; publishing after approval requires a separate manual action. The dashboard states staged items expire 30 days after passing review. Submission evidence is saved locally at `docs/screenshots/store-submitted.jpg` and excluded from the public repository. Remaining acceptance checks above are still open and are not implied to have passed by the store submission.
