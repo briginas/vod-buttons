@@ -1,6 +1,6 @@
 # Verification — 2026-11-13
 
-Status: version **0.1.0** submitted to Chrome Web Store on 2026-11-13; dashboard confirmed **Pending review**. Automatic publication is disabled. The extension is not published yet. OpenSpec progress: 16/21 tasks complete. Unchecked tasks include implementation that exists but still lacks the remaining acceptance evidence required by its task.
+Status: version **0.1.0** submitted to Chrome Web Store on 2026-11-13; dashboard confirmed **Pending review**. Automatic publication is disabled. The extension is not published yet. OpenSpec change [twitch-vod-mvp](../openspec/changes/archive/2026-11-13-twitch-vod-mvp/tasks.md) was archived at the user's request on 2026-11-13, with 16/21 tasks complete. Main specs were synchronized; the five remaining verification tasks were preserved as incomplete. Unchecked tasks include implementation that exists but still lacks the remaining acceptance evidence required by its task.
 
 ### Checks waived by the user — 2026-11-13
 
