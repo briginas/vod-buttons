@@ -23,7 +23,7 @@ After changing code, run `npm run build`, reload the extension on `chrome://exte
 
 Open a VOD at `https://www.twitch.tv/videos/…` and hover over the video. The left column rewinds; the right column skips forward. Each button immediately seeks by its labeled interval without toggling playback or pause. Seeking stops at the beginning or end of the recording.
 
-Each side starts with **5 s, 15 s, 30 s and 1 min**. Controls support normal, theater and fullscreen viewing. When a column does not fit, use the mouse wheel, touchpad gestures or its scrollbar to reach all its buttons. Scrolling a column does not seek the video. Controls hide after 3 seconds without pointer movement, presses or scrolling, or when the pointer leaves the player. Move the pointer to show them again. Keyboard focus keeps controls visible; Tab, Enter and Space work with the buttons.
+Each side starts with **5 s, 15 s, 30 s and 1 min**. Controls support normal, theater and fullscreen viewing. When a column does not fit, use the mouse wheel, touchpad gestures or its scrollbar to reach all its buttons. Scrolling a column does not seek the video. Controls hide after 1.5 seconds without pointer movement, presses or scrolling, or when the pointer leaves the player. Move the pointer to show them again. Keyboard focus keeps controls visible; Tab, Enter and Space work with the buttons.
 
 Live streams, clips and players embedded on other sites are excluded. Controls are hidden when the VOD is not ready, lacks a seek bar, or a recognized ad indicator is visible. Twitch can change its player: see [integration notes](docs/twitch-integration.md) and [verification status](docs/verification.md) before public release.
 
@@ -41,7 +41,7 @@ Settings are stored only on this device with Chrome's local extension storage. T
 npm run package
 ```
 
-This builds `dist/` and creates `release/vod-buttons-0.1.0.zip`, with `manifest.json` at its root. Source code, tests and developer dependencies are excluded. All extension code is bundled locally. No runtime build tools or remote code are required.
+This builds `dist/` and creates `release/vod-buttons-0.1.1.zip`, with `manifest.json` at its root. Source code, tests and developer dependencies are excluded. All extension code is bundled locally. No runtime build tools or remote code are required.
 
 Icons are original geometric assets; regenerate them with `python3 scripts/icons.py`. Release text and the remaining publication checklist are in [store materials](store/listing.md). Publication is a separate step after real-player acceptance testing.
 

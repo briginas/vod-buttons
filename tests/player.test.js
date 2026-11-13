@@ -99,10 +99,10 @@ test('pointer inactivity hides controls, activity restarts the timer and leaving
   t.mock.timers.tick(1); assert.equal(visible(), false);
   container.dispatchEvent(new win.Event('pointermove')); assert.equal(visible(), true);
   const button = overlay.host.shadowRoot.querySelector('button');
-  t.mock.timers.tick(2000);
+  t.mock.timers.tick(1000);
   const wheel = new win.WheelEvent('wheel', {bubbles: true, composed: true, cancelable: true});
   button.dispatchEvent(wheel); assert.equal(wheel.defaultPrevented, false);
-  t.mock.timers.tick(2000); assert.equal(visible(), true);
+  t.mock.timers.tick(1000); assert.equal(visible(), true);
   container.dispatchEvent(new win.Event('pointerleave')); assert.equal(visible(), false);
   t.mock.timers.tick(POINTER_IDLE_MS); assert.equal(visible(), false);
   overlay.destroy(); win.happyDOM.abort();

@@ -1,7 +1,7 @@
 import {DIRECTIONS, label, accessibleLabel, seconds, seekTarget} from './settings.js';
 import {CONTROL_BAR} from './twitch.js';
 
-export const POINTER_IDLE_MS = 3000;
+export const POINTER_IDLE_MS = 1500;
 
 const CSS = `
   :host { all: initial !important; position: absolute !important; inset: 0 !important;

@@ -10,7 +10,7 @@ Skip ahead or replay moments in Twitch VODs with customizable mouse-friendly see
 
 Watch Twitch recordings at your own pace, even when your keyboard is out of reach.
 
-Move your pointer over a VOD to reveal rewind buttons on the left and forward buttons on the right. Click an interval to revisit a moment or skip ahead while keeping your current playback or pause state. Controls hide after 3 seconds of pointer inactivity and reappear when you move the pointer. Keyboard focus keeps them visible.
+Move your pointer over a VOD to reveal rewind buttons on the left and forward buttons on the right. Click an interval to revisit a moment or skip ahead while keeping your current playback or pause state. Controls hide after 1.5 seconds of pointer inactivity and reappear when you move the pointer. Keyboard focus keeps them visible.
 
 - Start with 5 seconds, 15 seconds, 30 seconds and 1 minute on each side.
 - Customize the two sides independently, with up to six buttons each.
