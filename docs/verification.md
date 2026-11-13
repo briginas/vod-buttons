@@ -1,6 +1,6 @@
 # Verification — 2026-11-13
 
-Status: version **0.1.0** submitted to Chrome Web Store on 2026-11-13; dashboard confirmed **Pending review**. Automatic publication is disabled. The extension is not published yet. OpenSpec change [twitch-vod-mvp](../openspec/changes/archive/2026-11-13-twitch-vod-mvp/tasks.md) was archived at the user's request on 2026-11-13, with 16/21 tasks complete. Main specs were synchronized; the five remaining verification tasks were preserved as incomplete. Unchecked tasks include implementation that exists but still lacks the remaining acceptance evidence required by its task.
+Status: version **0.1.2** submitted to Chrome Web Store on 2026-11-13; the dashboard confirmed **Your extension was submitted for review**. Automatic publication after approval is enabled. The extension is awaiting review. OpenSpec change [twitch-vod-mvp](../openspec/changes/archive/2026-11-13-twitch-vod-mvp/tasks.md) was archived at the user's request on 2026-11-13, with 16/21 tasks complete. Main specs were synchronized; the five remaining verification tasks were preserved as incomplete. Unchecked tasks include implementation that exists but still lacks the remaining acceptance evidence required by its task.
 
 ### Checks waived by the user — 2026-11-13
 
@@ -27,7 +27,7 @@ Native Google Chrome **157.0.8103.40 (Official Build, arm64)**, macOS. This reco
 - Followed Watch live from VOD to the channel: extension controls disappeared. Browser Back returned to the VOD and one set of default controls reappeared.
 - On the separate **local fixture**, six-button columns in a 440×230 player had 154 px scroll viewports and 288 px content. Browser scrolling moved the left column from 0 to 134 px without changing the displayed video position. Keyboard focus reached the final right button and scrolled it into view (button bottom 284 px, viewport bottom 288 px).
 
-Store captures: [actual settings](../store/screenshots/settings.jpg), [actual Twitch VOD](../store/screenshots/vod.jpg), both 1280×800 JPEG. Original full-browser references and the local overflow fixture capture remain local and are excluded from Git. Fixture images are not evidence of Twitch compatibility.
+Store captures refreshed on 2026-11-13: [actual settings](../store/screenshots/settings.jpg), [Light VOD controls](../store/screenshots/vod-light.jpg), [Dark VOD controls](../store/screenshots/vod-dark.jpg), all 1280×800 JPEG. Original full-browser references and the local overflow fixture capture remain local and are excluded from Git. Fixture images are not evidence of Twitch compatibility.
 
 ## Acceptance evidence and release work
 
@@ -62,3 +62,10 @@ See the [store checklist](../store/listing.md). The public [repository](https://
 - Local preview checked at actual CSS viewport widths 763px and 320px. The icon remains left of FOR TWITCH and VOD Buttons; all three vertical centers match within 0.01px, and there is no horizontal overflow.
 - The introductory replay/skip sentence is absent. Settings and preview share the same header markup and CSS.
 - Screenshot: `docs/screenshots/settings-header.png` (local, ignored by git).
+
+## Release 0.1.2 — 2026-11-13
+
+- Manifest, package metadata and ZIP all carry version 0.1.2. ZIP integrity passed; `npm test` passed all 19 tests; `npm run package` succeeded.
+- Fresh screenshots captured from the installed extension settings and a real paused Twitch VOD in Chrome. Light/Dark changes applied to the open fullscreen player. These captures add appearance evidence; they do not complete every historical acceptance check above.
+- Removed both old store screenshots and uploaded three new 1280×800 JPEGs, with proportional cropping/resizing and no stretching. Replaced the store icon and corrected the listing description to include themes and the 1.5-second hide delay.
+- Canceled the pending 0.1.0 review, uploaded 0.1.2, saved the listing, and submitted successfully with automatic publication after approval enabled. Confirmation is saved locally at `docs/screenshots/store-0.1.2-submitted.png`.

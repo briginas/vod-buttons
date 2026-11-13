@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "VOD Buttons for Twitch",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Skip ahead or replay moments in Twitch VODs with customizable mouse-friendly seek buttons.",
   "permissions": ["storage"],
   "action": {

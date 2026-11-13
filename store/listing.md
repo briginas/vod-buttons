@@ -1,6 +1,6 @@
 # Chrome Web Store materials
 
-Release candidate name: **VOD Buttons for Twitch**. English only. This name is used consistently in the manifest and settings. Independent project; not affiliated with or endorsed by Twitch.
+Extension name: **VOD Buttons for Twitch**. English only. This name is used consistently in the manifest and settings. Independent project; not affiliated with or endorsed by Twitch.
 
 ## Short description
 
@@ -17,6 +17,7 @@ Move your pointer over a VOD to reveal rewind buttons on the left and forward bu
 - Choose positive whole numbers in seconds or minutes.
 - Add, remove and reorder intervals, or reset both sides to defaults.
 - Changes save automatically and update open VODs.
+- Choose Light or Dark themes for settings and player buttons.
 - Scroll inside a column with your mouse wheel, touchpad or scrollbar when space is limited.
 - Use normal, theater or fullscreen viewing on twitch.tv.
 
@@ -30,7 +31,7 @@ Not affiliated with or endorsed by Twitch.
 
 Single purpose: add configurable rewind/forward controls to Twitch VOD playback.
 
-- `storage`: save interval lists locally and apply changes to open tabs.
+- `storage`: save interval lists and the selected theme locally, and apply changes to open tabs.
 - Content-script access to `https://www.twitch.tv/*` and `https://twitch.tv/*`: observe Twitch navigation and render controls only on supported VOD pages. Navigation can start on a non-VOD Twitch page, so the script loads on the domain and then gates controls by context.
 - No tabs, history, scripting, remote-code, external API or analytics permission.
 
@@ -38,12 +39,22 @@ Data-use disclosure: no user data collected or transmitted. Local preferences on
 
 ## Assets
 
-- Original icon: `assets/icon.svg`; packaged PNGs: 16, 32, 48 and 128 px in `extension/icons/`. The 128 px asset has transparent padding around a 96 px icon.
-- Store screenshot 1: [real Twitch VOD with controls](screenshots/vod.jpg).
-- Store screenshot 2: [actual extension settings](screenshots/settings.jpg).
-- Both store assets are 1280×800 JPEG files captured from the actual extension in Chrome. The VOD capture was cropped to the player viewport and resized; the settings capture was converted to JPEG. No fixture content was used. Full browser reference captures stay local and are excluded from Git.
+- Selected plush seek-key icon source: `assets/icon-plush.png`; packaged PNGs: 16, 32, 48 and 128 px in `extension/icons/`.
+- Store screenshot 1: [actual extension settings](screenshots/settings.jpg).
+- Store screenshot 2: [Twitch VOD with Light controls](screenshots/vod-light.jpg).
+- Store screenshot 3: [Twitch VOD with Dark controls](screenshots/vod-dark.jpg).
+- Fresh captures from the installed extension in Chrome, made on 2026-11-13. Each is a 1280×800 JPEG, cropped and resized proportionally without stretching. No fixture or generated content was used. Full browser source captures remain local in `docs/screenshots/` and are excluded from Git.
 
-## Submission checklist
+## Release 0.1.2 — 2026-11-13
+
+- Version 0.1.0 review was canceled to replace the pending package.
+- Uploaded `release/vod-buttons-0.1.2.zip`; the Package page confirmed version 0.1.2.
+- Replaced both old screenshots with the three fresh captures above and replaced the old store icon with the selected plush seek-key icon.
+- Saved the listing with Light/Dark themes and the 1.5-second hide delay.
+- Submitted successfully: the dashboard confirmed **Your extension was submitted for review**. Automatic publication after approval is enabled for this submission, as part of the requested release.
+- Local submission evidence: `docs/screenshots/store-0.1.2-submitted.png` (excluded from Git).
+
+## Original submission checklist
 
 - [ ] Finish the remaining real-player acceptance checks in [verification](../docs/verification.md).
 - [x] Produce final store-sized screenshots and review visible content and branding.

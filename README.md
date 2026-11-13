@@ -43,7 +43,7 @@ Settings are stored only on this device with Chrome's local extension storage. T
 npm run package
 ```
 
-This builds `dist/` and creates `release/vod-buttons-0.1.1.zip`, with `manifest.json` at its root. Source code, tests and developer dependencies are excluded. All extension code is bundled locally. No runtime build tools or remote code are required.
+This builds `dist/` and creates `release/vod-buttons-0.1.2.zip`, with `manifest.json` at its root. Source code, tests and developer dependencies are excluded. All extension code is bundled locally. No runtime build tools or remote code are required.
 
 The selected plush icon source is `assets/icon-plush.png`; regenerate the 16/32/48/128 PNGs with `npm run icons` (sharp is a build dependency). The three original concepts are retained in `assets/icon-concepts/`; the previous geometric SVG is kept as historical artwork. Release text and the remaining publication checklist are in [store materials](store/listing.md). Publication is a separate step after real-player acceptance testing.
 
