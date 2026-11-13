@@ -56,3 +56,9 @@ See the [store checklist](../store/listing.md). The public [repository](https://
 - In-app browser local settings preview: checked both themes, keyboard radio selection, persistence after reload and responsive layouts at observed widths 388, 473 and 1454 CSS pixels. No horizontal overflow; value inputs shrink while units and action buttons remain on the same row. Confirmed the VOD Buttons heading and selected plush icon. These are local preview checks; the updated appearance was not manually retested on real Twitch.
 - Selected icon concept 1 (paired plush seek keys); all three concepts are saved in assets/icon-concepts. `npm run icons` generates transparent 16/32/48/128 PNGs from the saved source. Dimensions and alpha were verified.
 - `npm run package` rebuilt dist and release/vod-buttons-0.1.1.zip. Strict change validation passed. sharp 0.35.5 is build-only; npm install audit reported zero vulnerabilities.
+
+## Settings header update — 2026-11-13
+
+- Local preview checked at actual CSS viewport widths 763px and 320px. The icon remains left of FOR TWITCH and VOD Buttons; all three vertical centers match within 0.01px, and there is no horizontal overflow.
+- The introductory replay/skip sentence is absent. Settings and preview share the same header markup and CSS.
+- Screenshot: `docs/screenshots/settings-header.png` (local, ignored by git).
