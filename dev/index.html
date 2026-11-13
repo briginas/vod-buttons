@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>VOD Buttons — Local fixture</title>
+<style>
+  body { background: #100e15; color: #f3edf9; font: 15px system-ui; margin: 32px; }
+  a { color: #c6a0f7; } h1 { font-size: 26px; } .toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
+  .toolbar button { background: #3a294a; border: 1px solid #a57ac7; border-radius: 5px; padding: 8px 12px; color: white; cursor: pointer; }
+  #mount { width: min(880px, 95vw); }
+  [data-a-target="video-player"] { position: relative; width: 100%; height: 480px; background: radial-gradient(ellipse at 70% 0, #4e426b, transparent), linear-gradient(130deg,#172c2e,#17141d); }
+  #mount.small { width: 440px; max-width: 95vw; } .small [data-a-target="video-player"] { height: 230px; }
+  [data-a-target="video-player"]:fullscreen { height: 100%; }
+  [data-a-target="video-ref"] { height: 100%; } video { width: 100%; height: 100%; }
+  .caption { position: absolute; top: 38%; left: 25%; right: 25%; text-align: center; pointer-events: none; color: #b8bac5; }
+  .caption strong { display:block; color: white; font-size: 30px; margin-bottom: 8px; }
+  [data-a-target="player-controls"] { position: absolute; bottom: 0; left: 0; right: 0; height: 46px; background: #141019; padding: 8px 16px; box-sizing: border-box; }
+  [data-a-target="video-ad-label"] { position: absolute; left: 40%; top: 10px; background: #ffd24d; color: black; padding: 6px; }
+</style>
+<h1>VOD Buttons · local test fixture</h1>
+<p>Simulated player and media state. This is not Twitch and does not prove live compatibility.</p>
+<a href="options.html" target="_blank">Open settings preview</a>
+<div class="toolbar">
+  <button id="vod">Replace VOD</button><button id="live">Live</button><button id="clip">Clip</button>
+  <button id="ad">Toggle ad</button><button id="size">Toggle small player</button>
+  <button id="full">Fullscreen</button><button id="state">Toggle play/pause</button><button id="six">Six buttons</button>
+</div>
+<div id="mount"></div><p id="result" role="status"></p>
+<script type="module" src="fixture.js"></script></html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VOD Buttons — Settings</title>
+  <link rel="icon" href="icons/32.png">
+  <link rel="stylesheet" href="options.css">
+  <script src="options.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="icons/48.png" alt="" width="48" height="48">
+      <div><p class="eyebrow">VOD BUTTONS FOR TWITCH</p><h1>Your pace. Your buttons.</h1></div>
+    </header>
+    <p class="intro">Replay a moment or skip ahead. Set your own intervals for each side of the player.</p>
+    <div class="save-status"><p id="status" role="status" aria-live="polite">Loading settings…</p><button id="retry" hidden>Retry</button></div>
+    <div id="editors" class="editors" aria-busy="true"></div>
+    <section class="footer-card">
+      <div><h2>A fresh start</h2><p>Restore both sides to 5 s, 15 s, 30 s and 1 min.</p></div>
+      <button id="reset" disabled>Reset to defaults</button>
+    </section>
+    <section class="help">
+      <h2>Ready when you hover</h2>
+      <p>Open a Twitch VOD and move the pointer over the video. Rewind buttons appear on the left; forward buttons appear on the right. They hide after 3 seconds of pointer inactivity. Move the pointer to show them again; keyboard focus keeps them visible. Normal, theater and fullscreen modes are supported.</p>
+      <p>In a small player, scroll inside a column with your mouse wheel, touchpad gestures or its scrollbar to reach every button. Scrolling the column does not seek the video.</p>
+      <p>Changes save automatically and update open VODs. Hide a side by removing all its buttons. Live streams, clips and embedded players are not supported.</p>
+      <p class="privacy">Only on this device. No account, sync, analytics or viewing history collection.</p>
+    </section>
+  </main>
+</body>
+</html>
