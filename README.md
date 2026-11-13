@@ -31,6 +31,8 @@ Live streams, clips and players embedded on other sites are excluded. Controls a
 
 Click the extension icon to open settings. Rewind and Forward have independent lists of **0–6 buttons**. Enter positive whole numbers and choose Seconds or Minutes. For example, use 90 Seconds for a minute and a half. Use the arrow buttons to reorder, × to remove and Add button to add. Remove all buttons on a side to hide that column.
 
+Choose **Light** (warm cream) or **Dark** (plum and peach) in Appearance. The theme is saved on this device and updates settings tabs and open VOD controls. Resetting intervals keeps your theme.
+
 Valid changes save automatically and update already open VODs. Invalid fields display an error and leave the previous valid interval active. **Reset to defaults** restores both lists. A storage error is shown with a Retry button.
 
 Settings are stored only on this device with Chrome's local extension storage. There is no device sync, extension account, backend, analytics or collection of viewing history. See [privacy](PRIVACY.md). For support or bug reports, [open an issue](https://github.com/briginas/vod-buttons/issues).
@@ -43,7 +45,7 @@ npm run package
 
 This builds `dist/` and creates `release/vod-buttons-0.1.1.zip`, with `manifest.json` at its root. Source code, tests and developer dependencies are excluded. All extension code is bundled locally. No runtime build tools or remote code are required.
 
-Icons are original geometric assets; regenerate them with `python3 scripts/icons.py`. Release text and the remaining publication checklist are in [store materials](store/listing.md). Publication is a separate step after real-player acceptance testing.
+The selected plush icon source is `assets/icon-plush.png`; regenerate the 16/32/48/128 PNGs with `npm run icons` (sharp is a build dependency). The three original concepts are retained in `assets/icon-concepts/`; the previous geometric SVG is kept as historical artwork. Release text and the remaining publication checklist are in [store materials](store/listing.md). Publication is a separate step after real-player acceptance testing.
 
 ## Development
 

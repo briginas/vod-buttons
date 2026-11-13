@@ -10,7 +10,7 @@ test('editor adds, removes, reorders, validates independently, resets and persis
   const win = dom('https://extension.test/options.html'); const doc = win.document;
   doc.body.innerHTML = (await readFile('extension/options.html', 'utf8')).match(/<body>([\s\S]*)<\/body>/)[1];
   const store = createStore(storageAPI()); const options = startOptions(doc, store); await options.ready;
-  const input = doc.querySelector('input'); input.value = '0'; input.dispatchEvent(new win.Event('input'));
+  const input = doc.querySelector('#editors input'); input.value = '0'; input.dispatchEvent(new win.Event('input'));
   assert.equal(input.getAttribute('aria-invalid'), 'true'); assert.equal((await store.read()).rewind[0].value, 5);
   input.value = '90'; input.dispatchEvent(new win.Event('input')); await options.flushed();
   assert.equal((await store.read()).rewind[0].value, 90); assert.equal((await store.read()).forward[0].value, 5);

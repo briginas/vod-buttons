@@ -1,5 +1,6 @@
 import {defaults, DIRECTIONS, MAX_BUTTONS, parseInterval} from './settings.js';
 import {createStore} from './storage.js';
+import {startThemeOptions} from './theme-options.js';
 
 export function startOptions(doc = document, store = createStore()) {
   const editors = doc.querySelector('#editors');
@@ -63,6 +64,7 @@ export function startOptions(doc = document, store = createStore()) {
         input.setAttribute('aria-label', `${name} interval ${index + 1}`);
         input.setAttribute('aria-describedby', `error-${row.id}`);
         const unit = doc.createElement('select'); unit.setAttribute('aria-label', `${name} unit ${index + 1}`);
+        const unitField = doc.createElement('span'); unitField.className = 'unit-field'; unitField.append(unit);
         for (const [value, text] of [['seconds', 'Seconds'], ['minutes', 'Minutes']]) {
           const option = doc.createElement('option'); option.value = value; option.textContent = text; unit.append(option);
         }
@@ -90,7 +92,7 @@ export function startOptions(doc = document, store = createStore()) {
             rows[direction].splice(index, 1); render();
             doc.querySelector(`#add-${direction}`).focus(); save();
           }));
-        fields.append(input, unit, actions); li.append(fields, error); list.append(li); validate(false);
+        fields.append(input, unitField, actions); li.append(fields, error); list.append(li); validate(false);
       });
       if (!rows[direction].length) {
         const empty = doc.createElement('p'); empty.className = 'empty';
@@ -120,4 +122,8 @@ export function startOptions(doc = document, store = createStore()) {
   return {ready: load(), flushed: () => queue};
 }
 
-if (typeof document !== 'undefined' && document.querySelector('#editors')) startOptions();
+if (typeof document !== 'undefined' && document.querySelector('#editors')) {
+  startOptions();
+  const appearance = startThemeOptions();
+  window.addEventListener('pagehide', event => {if (!event.persisted) appearance.dispose();}, {once: true});
+}

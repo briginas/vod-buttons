@@ -1,8 +1,17 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VOD Buttons — Settings preview</title><link rel="stylesheet" href="../extension/options.css">
-<main><p>LOCAL PREVIEW · simulated extension storage</p><header><img src="../extension/icons/48.png" width="48" height="48" alt=""><div><p class="eyebrow">VOD BUTTONS FOR TWITCH</p><h1>Your pace. Your buttons.</h1></div></header>
+<main><p>LOCAL PREVIEW · simulated extension storage</p><header><img src="../extension/icons/128.png?plush-1" width="48" height="48" alt=""><div><p class="eyebrow">FOR TWITCH</p><h1>VOD Buttons</h1></div></header>
 <p class="intro">Replay a moment or skip ahead. Set your own intervals for each side of the player.</p>
+<section class="appearance" aria-labelledby="appearance-title">
+      <div><h2 id="appearance-title">Make yourself comfortable</h2><p>One theme for your settings and player buttons.</p></div>
+      <fieldset id="theme-selector" disabled>
+        <legend class="sr-only">Appearance</legend>
+        <label class="theme-choice"><input type="radio" name="theme" value="light" checked><span><span class="theme-swatch light" aria-hidden="true">☀</span>Light</span></label>
+        <label class="theme-choice"><input type="radio" name="theme" value="dark"><span><span class="theme-swatch dark" aria-hidden="true">☾</span>Dark</span></label>
+      </fieldset>
+      <div class="theme-feedback"><p id="theme-status" role="status" aria-live="polite">Loading theme…</p><button id="theme-retry" hidden>Retry theme</button></div>
+    </section>
 <div class="save-status"><p id="status" role="status"></p><button id="retry" hidden>Retry</button></div><div id="editors" class="editors"></div>
 <section class="footer-card"><div><h2>A fresh start</h2><p>Restore both sides to 5 s, 15 s, 30 s and 1 min.</p></div><button id="reset" disabled>Reset to defaults</button></section>
 <section class="help"><h2>Ready when you hover</h2><p>Hover over a VOD. Scroll inside an overflowing column with your mouse wheel, touchpad gestures or scrollbar.</p><p class="privacy">Only on this device. No account, sync, analytics or viewing history collection.</p></section></main>
-<script type="module">import {previewStorage} from './storage.js'; window.chrome = {storage: previewStorage()}; await import('../src/options.js');</script></html>
+<script type="module">import {previewStorage} from './storage.js'; window.chrome = {storage: previewStorage()}; await import('../src/options.js?v=themes-1');</script></html>

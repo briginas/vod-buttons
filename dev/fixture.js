@@ -3,10 +3,12 @@ import {findContext} from '../src/twitch.js';
 import {createStore} from '../src/storage.js';
 import {defaults} from '../src/settings.js';
 import {previewStorage} from './storage.js';
+import {createThemeStore} from '../src/appearance.js';
 
 const mount = document.querySelector('#mount');
 const result = document.querySelector('#result');
-const store = createStore(previewStorage());
+const api = previewStorage();
+const store = createStore(api);
 let route = '/videos/100', sequence = 100, time = 120, paused = true, player;
 function renderPlayer() {
   time = 120;
@@ -23,7 +25,7 @@ function renderPlayer() {
 }
 function status() { result.textContent = `Context: ${route} · Position: ${time} / 600 s · ${paused ? 'Paused' : 'Playing'}`; }
 renderPlayer();
-const controller = startController({store, resolve: doc => findContext(doc, new URL(`https://www.twitch.tv${route}`))});
+const controller = startController({store, themeStore: createThemeStore(api), resolve: doc => findContext(doc, new URL(`https://www.twitch.tv${route}`))});
 document.querySelector('#vod').onclick = () => {route = `/videos/${++sequence}`; renderPlayer(); controller.reconcile();};
 for (const [id, path] of [['live', '/channel'], ['clip', '/channel/clip/example']])
   document.querySelector(`#${id}`).onclick = () => {route = path; controller.reconcile(); status();};

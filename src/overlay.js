@@ -1,9 +1,10 @@
 import {DIRECTIONS, label, accessibleLabel, seconds, seekTarget} from './settings.js';
 import {CONTROL_BAR} from './twitch.js';
+import {THEME_CSS, normalizeTheme} from './appearance.js';
 
 export const POINTER_IDLE_MS = 1500;
 
-const CSS = `
+const CSS = THEME_CSS + `
   :host { all: initial !important; position: absolute !important; inset: 0 !important;
     z-index: 20 !important; pointer-events: none !important; display: block !important; }
   .area { position: absolute; top: 12px; bottom: var(--bottom, 72px); left: 12px; right: 12px;
@@ -11,19 +12,19 @@ const CSS = `
   .column { position: relative; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px;
     max-height: 100%; overflow-y: auto; overflow-x: hidden; padding: 4px;
     overscroll-behavior: contain; touch-action: pan-y; scrollbar-width: auto;
-    scrollbar-color: #b69ace #211c29; pointer-events: none; opacity: 0; min-height: 0;
+    scrollbar-color: var(--muted) var(--surface); pointer-events: none; opacity: 0; min-height: 0;
     max-width: calc(50% - 4px); }
   .column::-webkit-scrollbar { width: 10px; }
-  .column::-webkit-scrollbar-track { background: #211c29; border-radius: 6px; }
-  .column::-webkit-scrollbar-thumb { background: #b69ace; border-radius: 6px; border: 2px solid #211c29; }
+  .column::-webkit-scrollbar-track { background: var(--surface); border-radius: 6px; }
+  .column::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 6px; border: 2px solid var(--surface); }
   :host([data-hover]) .column, :host([data-keyboard-focus]) .column { opacity: 1; pointer-events: auto; }
   .forward { margin-left: auto; }
   button { box-sizing: border-box; flex: 0 0 auto; min-width: 88px; min-height: 40px; padding: 8px 12px;
-    border: 1px solid #ffffff30; border-radius: 7px; background: #141018cc; color: #fff;
+    border: 1px solid var(--border); border-radius: 14px; background: var(--surface); color: var(--text); box-shadow: var(--shadow);
     font: 600 15px/1.35 system-ui, sans-serif; text-align: center; cursor: pointer;
     overflow-wrap: anywhere; }
-  button:hover { background: #772ce8e6; border-color: #bf94ff; }
-  button:focus-visible { outline: 3px solid #dabaff; outline-offset: -3px; background: #5c269b; }
+  button:hover { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+  button:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
   @media (prefers-reduced-motion: no-preference) { .column { transition: opacity 100ms; } }
 `;
 
@@ -143,7 +144,7 @@ export function attachOverlay(context, settings, isCurrent) {
   player.append(host);
   update(settings);
   resize();
-  return {host, update, resize, destroy() {
+  return {host, update, resize, setTheme(theme) {host.dataset.theme = normalizeTheme(theme);}, destroy() {
     clearTimeout(idleTimer);
     abort.abort(); renderAbort?.abort(); resizeObserver.disconnect(); host.remove();
   }};

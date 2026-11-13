@@ -1,10 +1,12 @@
 import {defaults} from './settings.js';
 import {findContext, vodRoute} from './twitch.js';
 import {attachOverlay} from './overlay.js';
+import {observeTheme} from './appearance.js';
 
-export function startController({doc = document, win = window, store,
+export function startController({doc = document, win = window, store, themeStore,
   resolve = findContext, mount = attachOverlay} = {}) {
   let settings = defaults();
+  let theme = 'light';
   let current = null;
   let overlay = null;
   let frame = null;
@@ -40,12 +42,15 @@ export function startController({doc = document, win = window, store,
     overlay?.destroy();
     overlay = null;
     current = next;
-    if (next) overlay = mount(next, settings, () => {
-      const live = eligible();
-      const valid = live?.video === next.video && live?.player === next.player && live?.route === next.route;
-      if (!valid) schedule();
-      return valid;
-    });
+    if (next) {
+      overlay = mount(next, settings, () => {
+        const live = eligible();
+        const valid = live?.video === next.video && live?.player === next.player && live?.route === next.route;
+        if (!valid) schedule();
+        return valid;
+      });
+      overlay.setTheme?.(theme);
+    }
   }
   const observer = new MutationObserver(records => {
     if (records.some(record => !record.target.closest?.('vod-buttons-controls'))) schedule();
@@ -69,13 +74,17 @@ export function startController({doc = document, win = window, store,
     schedule();
   });
   const revision = settingsRevision;
-  const ready = store.read().then(next => {
+  const appearance = themeStore && observeTheme(themeStore, next => {
+    theme = next; overlay?.setTheme?.(theme);
+  });
+  const settingsReady = store.read().then(next => {
     if (!stopped && settingsRevision === revision) { settings = next; overlay?.update(settings); }
   }).catch(() => { /* Keep safe defaults; the settings page reports storage errors. */ }).finally(schedule);
+  const ready = Promise.all([settingsReady, appearance?.ready.catch(() => {})]);
   schedule();
   return {ready, reconcile, stop() {
     stopped = true;
     if (frame !== null) win.cancelAnimationFrame(frame);
-    observer.disconnect(); abort.abort(); unsubscribe(); overlay?.destroy(); current = null;
+    observer.disconnect(); abort.abort(); unsubscribe(); appearance?.dispose(); overlay?.destroy(); current = null;
   }};
 }
